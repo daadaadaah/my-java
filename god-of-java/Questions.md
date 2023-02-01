@@ -247,7 +247,7 @@ for(int i: array) {
 - 오버로딩
 
 ### 9. 기본 자료형을 매개변수로 넘겨 줄 때 Pass by value인가요? 아니면 Pass by reference인가요?
-Pass by value
+- Pass by value
 
 ### 10. 참조 자료형을 매개변수로 넘겨 줄 때 Pass by value인가요? 아니면 Pass by reference인가요?
 - Pass by reference
