@@ -470,3 +470,37 @@ public interface MemberManager {
 
 ### 14. 문제의 답에서 문자열을 더하기 위한 메소드의 이름은 무엇인가요?
 - append
+
+## Chapter 16. 클래스 안에 클래스가 들어갈 수도 있구나
+### 1. Nested 클래스에 속하는 3가지 클래스에는 어떤 것들이 있나요? 
+- static nested class, local inner class, anonymous inner class
+
+### 2. Nested 클래스를 컴파일하면 Nested클래스 파일의 이름은 어떻게 되나요? 
+- 앞에 $ 붙는다
+
+### 3. Static Nested 클래스는 다른 Nested 클래스와 어떤 차이가 있나요? 
+- 차이점 1. 객체 생성 : Static Nested 클래스는 외부 클래스의 인스턴스를 생성한 후에 객체를 생성하는 다른 Nested 클래스와 달리, 감싸고 있는 외부 클래스의 인스턴스 생성 없이 외부 클래스 이름 뒤에 점(.)을 찍어 바로 객체를 생성할 수 있다.
+- 차이점 2. 외부 클래스의 변수 접근 범위 : static 으로 선언된 변수에만 접근 가능하다.
+
+### 4. StaticNested 클래스의 객체 생성은 어떻게 하나요?
+- 감싸고 있는 외부 클래스의 인스턴스 생성 없이 외부 클래스 이름 뒤에 점(.)을 찍어 바로 객체를 생성할 수 있다.
+```java
+OuterClass.StaticNestedClass staticNestedClass = new OuterClass.StaticNestedClass();
+```
+
+### 5. 일반적인 내부 클래스의 객체 생성은 어떻게 하나요? 
+- 외부 클래스의 인스턴스를 생성한 후에 객체를 생성한다.
+```java
+OuterClass outClass = new OuterClass();
+OutClass.InnerClass innerClass = OutClass.new InnerClass();
+```
+
+### 6. Nested 클래스를 만드는 이유는 무엇인가요? 
+- 코드를 간단하게 표현하기 위함
+
+### 7. Nested 클래스에서 감싸고 있는 클래스의 private 로 선언된 변수에 접근할 수 있나요? 
+- static Nested 클래스는 안되지만, Inner Nested 클래스는 접근할 수 있다.
+ 
+### 8. 감싸고 있는 클래스에서 Nested 클래스에 선언된 private 로 선언된 변수에 접근할 수 있나요? 
+- static Nested 클래스와 Inner Nested 클래스 둘다 접근할 수 있다.
+  
