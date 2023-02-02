@@ -492,7 +492,7 @@ OuterClass.StaticNestedClass staticNestedClass = new OuterClass.StaticNestedClas
 - 외부 클래스의 인스턴스를 생성한 후에 객체를 생성한다.
 ```java
 OuterClass outClass = new OuterClass();
-OutClass.InnerClass innerClass = OutClass.new InnerClass();
+OutClass.InnerClass innerClass = outClass.new InnerClass();
 ```
 
 ### 6. Nested 클래스를 만드는 이유는 무엇인가요? 
