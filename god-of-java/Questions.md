@@ -511,3 +511,47 @@ OutClass.InnerClass innerClass = outClass.new InnerClass();
 
 ### 9. 어노테이션을 선언할 때에는 class 대신 어떤 예약어를 사용해야 하나요? 
 - @interface
+
+## Chapter 20. 가장 많이 쓰는 패키지는 자바랭
+### 1. 같은 패키지에 있는 클래스를 제외하고, 별도로 import 하지 않아도 되는 패키지는 무엇인가요?
+- java.lang
+
+### 2. 자바의 메모리가 부족해서 발생하는 에러는 무엇인가요?
+- OutOfMemoryError
+
+### 3. 메소드 호출관계가 너무 많아서 발생하는 에러는 무엇인가요?
+- StackOverflowError
+
+### 4. java.lang 패키지에 선언되어 있는 3개의 어노테이션에는 어떤 것들이 있고, 각각의 역할은?
+- Deprecated, Override, SuppressWarnings
+1. Deprecated : 더 이상 사용하지 않는 다는 것을 명시
+2. Override : Override 명시
+3. SuppressWarnings : 경고 무시
+
+### 5. Double과 Integer 같은 숫자 타입에서 처리할 수 있는 최대, 최소값을 알 수 있는 상수의 이름은?
+- MAX_VALUE, MIN_VALUE
+
+### 6. Integer값을 2진법으로 표현하려면 어떤 메소드를 사용해야 하나요?
+- toBinaryString
+
+### 7. Integer값을 16진법으로 표현하려면 어떤 메소드를 사용해야 하나요?
+- toHexString
+
+### 8. 속성(Properties)과 환경(Environment) 값의 차이는 무엇인가요?
+- `Properties`는 JVM에서 사용하는 속성 값을 제공하며, `Environmemt`는 시스템(장비)에서 사용하는 환경 값을 제공한다.
+- `Properties`는 추가할 수도있고 변경 할수 있지만, 환경값 `env`는 읽기만 가능하다
+
+### 9. System.out과 System.err 에서 사용할 수 있는 메소드들은 어떤 클래스의 API를 봐야 하나요?
+- java.io.PrintStream
+
+### 10. System 클래스에서 현재 시간을 조회하는 용도로 사용하는 메소드 이름은 무엇인가요?
+- currentTimeMillis()
+
+### 11. System 클래스에서 시간 측정 용도로 사용하는 메소드 이름은 무엇인가요?
+- nanoTime()
+
+### 12. System.out.print() 메소드와 System.out.println() 메소드의 차이는 무엇인가요?
+- 줄바꿈
+
+### 13. System.out.println() 메소드에 객체가 매개변수로 넘어 왔을 때 String의 어떤 메소드가 호출되어 결과를 출력하나요? 그리고, 그 메소드를 사용하는 이유는 무엇인가요?
+- valueOf
