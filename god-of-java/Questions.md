@@ -682,3 +682,41 @@ OutClass.InnerClass innerClass = outClass.new InnerClass();
 
 ### 12. 파일을 읽고, 문자열을 처리하기 위해서 필요한 Scanner 클래스가 속해있는 패키지는 무엇인가요?
 - java.util
+
+## Chapter 27. Serializable과 NIO도 살펴 봅시다
+### 1. java.io.Serializable을 import 하는 이유는 무엇인가요?
+- 클래스가 파일에 읽거나 쓸 수 있도록 하거나, 다른 서버로 보내거나 받을 수 있도록 하려면, 반드시 이 인터페이스를 implements 해야 한다.
+- Serializable 인터페이스를 구현하면 JVM에서 해당 객체는 저장하건 다른 서버로 전송할 수 있도록 해준다.
+
+### 2. java.io.Serializable의 serialVersionUID 를 지정하는 이유는 무엇인가요?
+- 해당 객체의 버전을 명시함으로써 각 서버가 쉽게 해당 객체가 같은지 다른지 확인할 수 있도록 하기 위해서
+
+### 3. 자바에서 객체를 파일로 읽거나 쓸 때 사용하는 Stream 클래스 이름은 무엇인가요?
+- 파일로 읽을 때 FileInputStream를 사용하고, 파일로 쓸 때 FileOutputStream를 사요한다. 
+
+### 4. transient 예약어의 용도는 무엇인가요?
+- 객체를 저장하거나, 다른 JVM으로 보낼 때, transient로 선언한 변수는 Serializable의 대상에서 제외된다. 
+- 보안상 중요한 변수나 꼭 저장해야 할 필요가 없는 변수에 대해서 transient를 사용할 수 있다.
+
+### 5. NIO가 생긴 이유는 무엇인가요?
+- 속도 때문이다. 채널과 버퍼를 사용하여 스트림 기반 I/O의 속도를 개선하기 위해서
+
+### 6. NIO에서 Channel의 용도는 무엇인가요?
+- 데이터를 중간에 처리
+
+### 7. NIO에서 Buffer의 용도는 무엇인가요?
+- 데이터를 담는 역할
+
+### 8. NIO에서 Buffer의 상태를 확인하기 위한 메소드들에는 어떤 것들이 있나요?
+1. position()
+2. limit()
+3. capacity() 
+
+### 9. NIO에서 Buffer의 position을 변경하기 위한 메소드들에는 어떤 것들이 있나요?
+1. flip()
+2. mark()
+3. reset()
+4. rewind()
+5. remaining()
+6. hasRemaining()
+7. clear()
