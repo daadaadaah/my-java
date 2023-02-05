@@ -720,3 +720,26 @@ OutClass.InnerClass innerClass = outClass.new InnerClass();
 5. remaining()
 6. hasRemaining()
 7. clear()
+
+## Chapter 28. 다른서버로 데이터 보내려면 어떻게 하면 되나요?
+### 1. TCP 통신과 UDP 통신의 차이는 무엇인가요?
+- TCP는 상대방이 데이터를 받았는지 보장할 수 있는 반면, UDP는 보장하지 않는다.
+
+### 2. 네트워크 통신시 포트 번호를 지정하는 이유는 무엇인가요? (?)
+- 컴퓨터 안에서 어떤 프로그램을 사용할지를 지정해주기 위해
+
+### 3. ServerSocket 클래스의 용도는 무엇인가요?
+- 서버에서 TCP 통신으로 전달된 데이터를 받기 위해
+
+### 4. ServerSocket 클래스의 accept() 메소드의 용도는 무엇인가요?
+- 새로운 소켓 연결을 기다리고, 연결이 되면 Socket 객체를 리턴
+
+### 5. Socket 클래스의 용도는 무엇인가요?
+- TCP 통신으로 데이터를 보내기 위해 
+ 
+### 6. DatagramSocket 클래스의 용도는 무엇인가요?
+- UDP 통신으로 데이터를 보내기도하고 받기도 하기 위해
+
+### 7. DatagramPacket 클래스의 용도는 무엇인가요? (?)
+- UDP 통신에 필요한 데이터를 주고 받기 위해
+ 
