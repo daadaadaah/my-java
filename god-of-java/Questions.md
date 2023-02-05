@@ -708,9 +708,9 @@ OutClass.InnerClass innerClass = outClass.new InnerClass();
 - 데이터를 담는 역할
 
 ### 8. NIO에서 Buffer의 상태를 확인하기 위한 메소드들에는 어떤 것들이 있나요?
-1. position()
-2. limit()
-3. capacity() 
+1. position() : 현재 버퍼의 위치 리턴
+2. limit() : 버퍼에서 읽거나 쓸 수 없는 첫 위치 리턴
+3. capacity() : 버퍼에 담을 수 있는 크기 리턴
 
 ### 9. NIO에서 Buffer의 position을 변경하기 위한 메소드들에는 어떤 것들이 있나요?
 1. flip()
@@ -738,8 +738,9 @@ OutClass.InnerClass innerClass = outClass.new InnerClass();
 - TCP 통신으로 데이터를 보내기 위해 
  
 ### 6. DatagramSocket 클래스의 용도는 무엇인가요?
-- UDP 통신으로 데이터를 보내기도하고 받기도 하기 위해
+- UDP 통신으로 데이터를 송수신하기 위해서 사용하는 클래스이다.
+- 클라이언트에서 데이터를 전달하면 DatagramPacket 객체로 받아 처리하면 된다.
 
-### 7. DatagramPacket 클래스의 용도는 무엇인가요? (?)
-- UDP 통신에 필요한 데이터를 주고 받기 위해
+### 7. DatagramPacket 클래스의 용도는 무엇인가요?
+- UDP 통신에 필요한 데이터를 전달하고 받기 위해 사용하는 클래스이다.
  
