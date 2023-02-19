@@ -7,7 +7,7 @@ public class CommonCalculate {
     this.amount = 0;
   }
 
-  public void plus(int value) {
+  public synchronized void plus(int value) {
     this.amount += value;
   }
   
