@@ -7,8 +7,13 @@ public class CommonCalculate {
     this.amount = 0;
   }
 
-  public synchronized void plus(int value) {
-    this.amount += value;
+  public void plus(int value) {
+    // ...
+    // 10만 줄....
+    // ...
+    synchronized(this) {
+      this.amount += value;
+    }
   }
   
   public void minus(int value) {
