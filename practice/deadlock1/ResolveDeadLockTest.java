@@ -12,18 +12,19 @@ public class ResolveDeadLockTest {
         Runnable block1 = new Runnable() {
             public void run() {
                 System.out.println("[Thread-1] run() start!");
-                System.out.println("[Thread-1] 'a' 쓸꺼야! ");
 
-                synchronized (a) {
-                    System.out.println("[Thread-1] 'a' 쓰는 중... ");
+                System.out.println("[Thread-1] 'b' 쓸꺼야! ");
+                synchronized (b) {
+                    System.out.println("[Thread-1] 'b' 쓰는 중... ");
 
-                    System.out.println("[Thread-1] 'b' 쓸꺼야! ");
-                    synchronized (b) { // Thread-1 have A but need B also
-                        System.out.println("[Thread-1] 'b' 쓰는 중 ");
+                    System.out.println("[Thread-1] 'a' 쓸꺼야! ");
+                    synchronized (a) { // Thread-1 have A but need B also
+                        System.out.println("[Thread-1] 'a' 쓰는 중 ");
                     }
-                    System.out.println("[Thread-1] 'b' 다 씀! ");
+                    System.out.println("[Thread-1] 'a' 다 씀! ");
                 }
-                System.out.println("[Thread-1] 'a' 다 씀!");
+                System.out.println("[Thread-1] 'b' 다 씀!");
+                System.out.println("[Thread-1] run() end");
             }
         };
 
@@ -43,6 +44,7 @@ public class ResolveDeadLockTest {
                     System.out.println("-----------------[Thread-2] 'a' 다 씀! ");
                 }
                 System.out.println("-----------------[Thread-2] 'b' 다 씀! ");
+                System.out.println("-----------------[Thread-2] run() end ");
             }
         };
 
