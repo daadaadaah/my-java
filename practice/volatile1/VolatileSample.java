@@ -11,12 +11,8 @@ public class VolatileSample extends Thread {
   public void run() {
     System.out.println("--------------------- VolatileSample : run() start ");
     
-    try {
-      while(instanceVariable == 0) {
-        Thread.sleep(1);      
-      }
-    } catch(Exception e) {
-      e.printStackTrace();
+    while(instanceVariable == 0) {
+      System.out.println("--------------------- VolatileSample : while ing... ");
     }
 
     System.out.println("--------------------- VolatileSample : instanceVariable : "+instanceVariable);
