@@ -7,11 +7,13 @@ public class CommonCalculate {
     this.amount = 0;
   }
 
+  Object lock = new Object();
+
   public void plus(int value) {
     // ...
     // 10만 줄....
     // ...
-    synchronized(this) {
+    synchronized(lock) {
       this.amount += value;
     }
   }
