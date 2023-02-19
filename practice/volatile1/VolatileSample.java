@@ -2,7 +2,7 @@ package volatile1;
 
 public class VolatileSample extends Thread {
 
-  private volatile double instanceVariable = 0;
+  private double instanceVariable = 0;
   
   void setDouble(double value) {
     this.instanceVariable = value;
@@ -11,7 +11,13 @@ public class VolatileSample extends Thread {
   public void run() {
     System.out.println("--------------------- VolatileSample : run() start ");
     
-    while(instanceVariable == 0);
+    try {
+      while(instanceVariable == 0) {
+        Thread.sleep(1);      
+      }
+    } catch(Exception e) {
+      e.printStackTrace();
+    }
 
     System.out.println("--------------------- VolatileSample : instanceVariable : "+instanceVariable);
 
