@@ -2,9 +2,15 @@ package extends1;
 
 public class RunExtends {
   public static void main(String[] args) {
-    Child child = new Child();
-    child.printName();
-//    child.printPrivateName(); 불가능!
-    child.printProtectedName();
+    // 1. 매개변수가 없는 경우
+//    Child child = new Child();
+//    child.printName();
+////    child.printPrivateName(); 불가능!
+//    child.printProtectedName();
+
+    // 2. 매개변수가 있는 경우
+    ChildArg childArg = new ChildArg();
+    childArg.printName();
+
   }
 }
