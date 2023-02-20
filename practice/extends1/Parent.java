@@ -8,4 +8,12 @@ public class Parent {
     public void printName() {
         System.out.println("Parent printName()");
     }
+
+    private void printPrivateName() {
+        System.out.println("Parent printPrivateName()");
+    }
+
+    protected void printProtectedName() {
+        System.out.println("Parent printProtectedName()");
+    }
 }
