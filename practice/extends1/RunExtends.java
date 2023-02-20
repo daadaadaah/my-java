@@ -12,5 +12,8 @@ public class RunExtends {
     ChildArg childArg = new ChildArg();
     childArg.printName();
 
+    // 3. 손자의 경우
+    GrandChild grandChild = new GrandChild();
+    grandChild.printProtectedName();
   }
 }
