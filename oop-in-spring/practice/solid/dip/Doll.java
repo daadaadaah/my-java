@@ -1,9 +1,12 @@
-public class Doll {
+public class Doll extends AbstractToy {
 
-    private String name = "doll";
+    public Doll() {
+        super("doll");
+    }
 
-    public String getName() {
-        return this.name;
+    @Override
+    public void play() {
+        this.talk();
     }
 
     public void talk() {

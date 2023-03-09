@@ -1,8 +1,11 @@
-public class Lego {
-    private String name = "lego";
+public class Lego extends AbstractToy {
+    public Lego() {
+        super("lego");
+    }
 
-    public String getName() {
-        return this.name;
+    @Override
+    public void play() {
+        this.assemble();
     }
 
     public void assemble() {

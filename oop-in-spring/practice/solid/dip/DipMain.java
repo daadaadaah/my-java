@@ -17,5 +17,20 @@ public class DipMain {
         // (3) 아이가 레고를 가지고 놀 때
         KidWithLego kidWithLego = new KidWithLego(kidWithRobot.getAge());
         kidWithLego.play();
+
+        /** DIP 적용시킨 사례 **/
+        Kid kid = new Kid(6);
+
+        // (1) 아이가 인형을 가지고 놀 때
+        kid.play(new Doll());
+
+        kid.grow();
+
+        // (2) 아이가 로봇을 가지고 놀 때
+        kid.play(new Robot());
+        kid.grow();
+
+        // (3) 아이가 레고를 가지고 놀 때
+        kid.play(new Lego());
     }
 }

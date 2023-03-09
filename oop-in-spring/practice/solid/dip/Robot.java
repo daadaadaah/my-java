@@ -1,8 +1,12 @@
-public class Robot {
-    private String name = "robot";
+public class Robot extends AbstractToy {
 
-    public String getName() {
-        return this.name;
+    public Robot() {
+        super("robot");
+    }
+
+    @Override
+    public void play() {
+        this.shoot();
     }
 
     public void shoot() {
