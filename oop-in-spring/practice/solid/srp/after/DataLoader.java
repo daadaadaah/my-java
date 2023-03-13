@@ -1,8 +1,8 @@
 public class DataLoader {
     public Data loadHtml() {
-        SocketClient client = new SocketClient();
-        client.connect(server, port);
-        return client.read();
+        HttpClient client = new HttpClient();
+        client.connect(url);
+        return client.getResponse();
     }
 
     private void updateGui(Data data) {
