@@ -1,6 +1,6 @@
 public class DataViewer {
 
-    public void DataViewer() {
+    public void display() {
         byte[] data = loadHtml();
         updateGui(data);
     }
