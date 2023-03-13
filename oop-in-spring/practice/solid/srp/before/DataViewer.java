@@ -1,22 +1,22 @@
 public class DataViewer {
 
     public void DataViewer() {
-        String data = loadHtml();
+        byte[] data = loadHtml();
         updateGui(data);
     }
     
-    public String loadHtml() {
-        HttpClient client = new HttpClient();
-        client.connect(url);
-        return client.getResponse();
+    public byte[] loadHtml() {
+        SocketClient client = new SocketClient();
+        client.connect(server, port);
+        return client.read();
     }
     
-    private void updateGui(String data) {
+    private void updateGui(byte[] data) {
         GuiData guiModel = parseDataToGuiData(data);
         tableUI.changeData(guiModel);
     }
     
-    private GuiData parseDataToGuiData(String data) {
+    private GuiData parseDataToGuiData(byte[] data) {
         // ... 파싱 처리 코듸
     }
     
