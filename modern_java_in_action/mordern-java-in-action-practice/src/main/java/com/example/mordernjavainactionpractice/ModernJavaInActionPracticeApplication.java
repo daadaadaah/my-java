@@ -42,12 +42,13 @@ public class ModernJavaInActionPracticeApplication {
 				return RED.equals(apple.getColor());
 			}
 		});
-
 		System.out.println(redApples2); // [Apple{color='RED', weight=120}]
 
 		List<Apple> redApples3 = filterApples(inventory, (Apple apple) -> RED.equals(apple.getColor()));
-
 		System.out.println(redApples3); // [Apple{color='RED', weight=120}]
+
+		List<Integer> evenNumbers = filter(Arrays.asList(1,2,3,4,5,6), (Integer i) -> i % 2 == 0);
+		System.out.println(evenNumbers); // [2, 4, 6]
 	}
 
 	public static List<Apple> filterApplesByColor(List<Apple> inventory, Color color){
@@ -76,6 +77,17 @@ public class ModernJavaInActionPracticeApplication {
 		List<Apple> result = new ArrayList<>();
 
 		for (Apple apple : inventory) {
+			if (p.test(apple)) {
+				result.add(apple);
+			}
+		}
+		return result;
+	}
+
+	public static <T> List<T> filter(List<T> inventory, Predicate<T> p) {
+		List<T> result = new ArrayList<>();
+
+		for (T apple : inventory) {
 			if (p.test(apple)) {
 				result.add(apple);
 			}
