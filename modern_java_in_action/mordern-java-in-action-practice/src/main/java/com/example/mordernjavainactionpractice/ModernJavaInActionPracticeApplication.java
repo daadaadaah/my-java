@@ -15,15 +15,18 @@ public class ModernJavaInActionPracticeApplication {
 	public static void main(String[] args) {
 		List<Apple> inventory = Arrays.asList(new Apple(80, GREEN), new Apple(155, GREEN), new Apple(120, RED));
 
-		List<Apple> greenApples = filterGreenApples(inventory);
+		List<Apple> greenApples = filterApplesByColor(inventory, GREEN);
 		System.out.println(greenApples); // [Apple{color='GREEN', weight=80}, Apple{color='GREEN', weight=155}]
+
+		List<Apple> redApples = filterApplesByColor(inventory, RED);
+		System.out.println(redApples); // [Apple{color='RED', weight=120}]
 	}
 
-	public static List<Apple> filterGreenApples(List<Apple> inventory){
+	public static List<Apple> filterApplesByColor(List<Apple> inventory, Color color){
 		List<Apple> result = new ArrayList<>();
 
 		for(Apple apple: inventory){
-			if(GREEN.equals(apple.getColor())){
+			if(color.equals(apple.getColor())){
 				result.add(apple);
 			}
 		}
