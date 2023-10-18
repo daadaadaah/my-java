@@ -23,6 +23,18 @@ public class ModernJavaInActionPracticeApplication {
 
 		List<Apple> weight130Apples = filterApplesByWeight(inventory, 130);
 		System.out.println(weight130Apples); // [Apple{color='GREEN', weight=155}]
+
+		// 초록색 사과만
+		List<Apple> greenApples2 = filterApples(inventory, new AppleColorPredicate());
+		System.out.println(greenApples2); // [Apple{color='GREEN', weight=80}, Apple{color='GREEN', weight=155}]
+
+		// 무거운 사과만
+		List<Apple> heavyApples = filterApples(inventory, new AppleWeightPredicate());
+		System.out.println(heavyApples); // [Apple{color='GREEN', weight=155}]
+
+		// 빨간색이면서 무거운 사과만
+		List<Apple> redAndHeavyApples = filterApples(inventory, new AppleRedAndHeavyPredicate());
+		System.out.println(redAndHeavyApples); // []
 	}
 
 	public static List<Apple> filterApplesByColor(List<Apple> inventory, Color color){
@@ -41,6 +53,17 @@ public class ModernJavaInActionPracticeApplication {
 
 		for(Apple apple: inventory){
 			if(apple.getWeight() > weight){
+				result.add(apple);
+			}
+		}
+		return result;
+	}
+
+	public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p){
+		List<Apple> result = new ArrayList<>();
+
+		for(Apple apple : inventory){
+			if(p.test(apple)){
 				result.add(apple);
 			}
 		}
