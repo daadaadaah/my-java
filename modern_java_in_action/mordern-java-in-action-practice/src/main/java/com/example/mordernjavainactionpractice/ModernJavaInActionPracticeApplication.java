@@ -44,6 +44,10 @@ public class ModernJavaInActionPracticeApplication {
 		});
 
 		System.out.println(redApples2); // [Apple{color='RED', weight=120}]
+
+		List<Apple> redApples3 = filterApples(inventory, (Apple apple) -> RED.equals(apple.getColor()));
+
+		System.out.println(redApples3); // [Apple{color='RED', weight=120}]
 	}
 
 	public static List<Apple> filterApplesByColor(List<Apple> inventory, Color color){
