@@ -20,6 +20,9 @@ public class ModernJavaInActionPracticeApplication {
 
 		List<Apple> redApples = filterApplesByColor(inventory, RED);
 		System.out.println(redApples); // [Apple{color='RED', weight=120}]
+
+		List<Apple> weight130Apples = filterApplesByWeight(inventory, 130);
+		System.out.println(weight130Apples); // [Apple{color='GREEN', weight=155}]
 	}
 
 	public static List<Apple> filterApplesByColor(List<Apple> inventory, Color color){
@@ -27,6 +30,17 @@ public class ModernJavaInActionPracticeApplication {
 
 		for(Apple apple: inventory){
 			if(color.equals(apple.getColor())){
+				result.add(apple);
+			}
+		}
+		return result;
+	}
+
+	public static List<Apple> filterApplesByWeight(List<Apple> inventory, int weight){
+		List<Apple> result = new ArrayList<>();
+
+		for(Apple apple: inventory){
+			if(apple.getWeight() > weight){
 				result.add(apple);
 			}
 		}
