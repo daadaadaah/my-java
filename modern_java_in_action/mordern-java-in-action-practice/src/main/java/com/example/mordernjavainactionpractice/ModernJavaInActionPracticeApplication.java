@@ -15,7 +15,7 @@ public class ModernJavaInActionPracticeApplication {
 
 	// Java 8
 	public static List<String> getLowCaloricDishesNamesInJava8(List<Dish> dishes) {
-		return dishes.stream()
+		return dishes.parallelStream()
 			.filter(d -> d.getCalories() < 400) // 400 이하의 요리 담기
 			.sorted(comparing(Dish::getCalories)) // 칼로리 순으로 정렬
 			.map(Dish::getName) // 요리 이름만 담기
